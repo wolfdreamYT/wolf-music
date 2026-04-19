@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="./node_modules/tone/build/Tone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/spessas/SpessaSynth@master/src/spessasynth_lib/spessasynth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tone@latest/build/Tone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tonejs-instrument-piano-mp3@1.1.2/dist/index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        body { margin: 0; background: #1a1a1a; overflow: hidden; font-family: sans-serif; }
+        #controls { position: absolute; top: 10px; left: 10px; z-index: 10; color: white; }
+    </style>
+</head>
+<body>
+
+    <div id="topbar">
+        <div class="left">
+            <button title="Render the visualizer" onclick="playMusic()">▶ Play</button>
+            <input type="file" id="fileInput" accept=".json" style="display: none;">
+            <button title="Choose your custom JSON file to render" onclick="document.getElementById('fileInput').click()">File</button>
+            <input type="file" id="soundInput" accept=".wav" style="display: none;">
+            <button title="Choose your custom sound file" onclick="document.getElementById('soundInput').click()">Sound</button>
+            <input title="Note Color" type="color" id="noteColorPicker" value="#c391ff">
+            <input title="Key Color" type="color" id="keyColorPicker" value="#c391ff">
+            <input title="Glow Color" type="color" id="glowColorPicker" value="#c391ff">
+            <input title="Particle Color" type="color" id="particleColorPicker" value="#c391ff">
+        </div>
+    </div>
+
+    <canvas id="tsCanvas" style="position:absolute;top:0;left:0;pointer-events:none;z-index:10;"></canvas>
+
+</body>
+</html>
