@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    loadSongData("timepiano.json");
+    loadSongData("dark.json");
     if (!pianoBuffer) loadDefaultPianoSample('note-5.wav');
 }
 
