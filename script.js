@@ -30,6 +30,18 @@ let particleColor = "#c391ff"
 let soundFile = "note-5.wav";
 let particles = [];
 
+function loadSelectedSong() {
+    const file = document.getElementById("songSelect").value;
+
+    fetch(file)
+        .then(res => res.json())
+        .then(data => {
+            songData = data;
+            console.log("Loaded preset:", file);
+        })
+        .catch(err => console.error("Failed to load:", err));
+}
+
 class Particle {
     constructor(x, y, color) {
         this.x = x;
@@ -460,4 +472,9 @@ function getNoteX(midi) {
 function getNoteWidth(midi) {
     let whiteKeyWidth = width / 52;
     return isBlackKey(midi) ? whiteKeyWidth * 0.6 : whiteKeyWidth;
+}
+
+function startEverything() {
+    playMusic();
+    console.log("Started!");
 }
