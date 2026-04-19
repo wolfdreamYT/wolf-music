@@ -42,6 +42,18 @@ function loadSelectedSong() {
         .catch(err => console.error("Failed to load:", err));
 }
 
+async function loadSound(file) {
+    try {
+        const response = await fetch(file);
+        const arrayBuffer = await response.arrayBuffer();
+        pianoBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+
+        console.log("Loaded sound:", file);
+    } catch (err) {
+        console.error("Failed to load sound:", err);
+    }
+}
+
 class Particle {
     constructor(x, y, color) {
         this.x = x;
