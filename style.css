@@ -38,3 +38,57 @@
     display: flex;
     align-items: center;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* main button */
+.dropbtn {
+    background: #333;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    margin-right: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: sans-serif;
+}
+
+.dropbtn:hover {
+    background: #555;
+}
+
+/* dropdown box */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #222;
+    min-width: 140px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    z-index: 100;
+}
+
+/* items */
+.dropdown-content a {
+    color: white;
+    padding: 8px 10px;
+    display: block;
+    cursor: pointer;
+    transition: 0.15s;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background: #444;
+}
+
+/* show on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
