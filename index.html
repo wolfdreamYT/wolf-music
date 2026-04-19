@@ -19,16 +19,25 @@
 
     <div id="topbar">
         <div class="left">
-            <button onclick="startEverything()">▶ Play</button>
+            <button onclick="startEverything()">Play</button>
             <input type="file" id="fileInput" accept=".json" style="display: none;" class="dropbtn">
             <select id="songSelect" class="dropbtn">
                 <option value="timepiano.json">Time (Inception) - Hans Zimmer</option>
-                <option value="dark.json">Darkside - Alan Walker</option>
+                <option value="topgun.json">Top Gun Anthem - Harold Faltermeyer</option>
+                <option value="STAY-interstellar.json">S.T.A.Y (Interstellar) - Hans Zimmer</option>
             </select>
 
             <button onclick="loadSelectedSong()">Load Song</button>
-            <input type="file" id="soundInput" accept=".wav" style="display: none;">
-            <button title="Choose your custom sound file" onclick="document.getElementById('soundInput').click()">Sound</button>
+            <div class="dropdown">
+                <button class="dropbtn">Sound</button>
+
+                <div class="dropdown-content">
+                    <a onclick="loadSound('note-5.wav')">Mason & Rischt Upright Piano</a>
+                    <a onclick="loadSound('yamaha-ydp145.wav')">Yamaha YDP-145 Piano</a>
+                    <a onclick="loadSound('yamaha-psre373org.wav')">Yamaha PSR-E373 Organ</a>
+                    <a onclick="loadSound('yamaha-psre373synth.wav')">Yamaha PSR-E373 Synth</a>
+                </div>
+            </div>
             <input title="Note Color" type="color" id="noteColorPicker" value="#c391ff">
             <input title="Key Color" type="color" id="keyColorPicker" value="#c391ff">
             <input title="Glow Color" type="color" id="glowColorPicker" value="#c391ff">
