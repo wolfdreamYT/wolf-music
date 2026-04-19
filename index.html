@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/tone@latest/build/Tone.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tonejs-instrument-piano-mp3@1.1.2/dist/index.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="code2.js"></script>
     <style>
         body { margin: 0; background: #1a1a1a; overflow: hidden; font-family: sans-serif; }
         #controls { position: absolute; top: 10px; left: 10px; z-index: 10; color: white; }
@@ -19,9 +19,14 @@
 
     <div id="topbar">
         <div class="left">
-            <button title="Render the visualizer" onclick="playMusic()">▶ Play</button>
-            <input type="file" id="fileInput" accept=".json" style="display: none;">
-            <button title="Choose your custom JSON file to render" onclick="document.getElementById('fileInput').click()">File</button>
+            <button onclick="startEverything()">▶ Play</button>
+            <input type="file" id="fileInput" accept=".json" style="display: none;" class="dropbtn">
+            <select id="songSelect" class="dropbtn">
+                <option value="timepiano.json">Time (Inception) - Hans Zimmer</option>
+                <option value="dark.json">Darkside - Alan Walker</option>
+            </select>
+
+            <button onclick="loadSelectedSong()">Load Song</button>
             <input type="file" id="soundInput" accept=".wav" style="display: none;">
             <button title="Choose your custom sound file" onclick="document.getElementById('soundInput').click()">Sound</button>
             <input title="Note Color" type="color" id="noteColorPicker" value="#c391ff">
